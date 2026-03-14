@@ -73,16 +73,3 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     
 });
-
-
-Route::get('/setup-admin', function () {
-    if (\App\Models\Admin::count() > 0) {
-        return 'Admin already exists!';
-    }
-    \App\Models\Admin::create([
-        'name'     => 'Tamzid',
-        'email'    => 'admin@tamzid.com',
-        'password' => bcrypt('Admin@1234'),
-    ]);
-    return 'Admin created! Now delete this route.';
-});
