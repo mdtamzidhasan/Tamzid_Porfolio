@@ -45,7 +45,7 @@
         <div class="nav-container">
             <a href="#home" class="nav-logo">
                 <span class="logo-bracket">&lt;</span>
-                {{ Str::upper(substr($profile->name ?? 'Dev', 0, 2)) }}
+                {{ Str::upper(explode(' ', trim($profile->name ?? 'Dev'))[0]) }}
                 <span class="logo-bracket">/&gt;</span>
             </a>
 
